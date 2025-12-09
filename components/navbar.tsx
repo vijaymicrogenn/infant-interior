@@ -41,7 +41,7 @@ export default function Navbar({ isOpaque }: NavbarProps) {
           {/* Logo */}
           <div className="flex items-center ">
             <div className="w-16 h-16   rounded-md flex items-center justify-center">
-              <img src="logo.png" alt="" />
+              <img src="Logo.png" alt="" />
             </div>
            
           </div>

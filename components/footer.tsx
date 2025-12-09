@@ -15,8 +15,8 @@ export default function Footer() {
           {/* Brand */}
           <div className="space-y-4">
             <img
-              src="logo.png"
-              alt="Urban Interiors Logo"
+              src="Logo.png"
+              alt="Infant Interiors Logo"
               className="w-36 opacity-95"
             />
             <p className="text-gray-300 text-sm leading-relaxed">
