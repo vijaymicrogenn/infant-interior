@@ -1,0 +1,270 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: #f5f5f5;
+  --foreground: #111318;
+  --card: #ffffff;
+  --card-foreground: #111318;
+  --popover: #ffffff;
+  --popover-foreground: #111318;
+  --primary: #111318;
+  --primary-foreground: #f5f5f5;
+  --secondary: #f1e3d3;
+  --secondary-foreground: #111318;
+  --muted: #e0d5ca;
+  --muted-foreground: #666666;
+  --accent: #c6a16a;
+  --accent-foreground: #ffffff;
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+  --border: #e5e5e5;
+  --input: #ffffff;
+  --ring: #c6a16a;
+  --chart-1: #c6a16a;
+  --chart-2: #111318;
+  --chart-3: #f1e3d3;
+  --chart-4: #666666;
+  --chart-5: #cccccc;
+  --radius: 0.5rem;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #111318;
+  --sidebar-primary: #111318;
+  --sidebar-primary-foreground: #f5f5f5;
+  --sidebar-accent: #c6a16a;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #e5e5e5;
+  --sidebar-ring: #c6a16a;
+}
+
+.dark {
+  --background: #15171b;
+  --foreground: #ffffff;
+  --card: #1f2129;
+  --card-foreground: #ffffff;
+  --popover: #1f2129;
+  --popover-foreground: #ffffff;
+  --primary: #ffffff;
+  --primary-foreground: #111318;
+  --secondary: #2a2f3a;
+  --secondary-foreground: #ffffff;
+  --muted: #3a3f4a;
+  --muted-foreground: #b0b0b0;
+  --accent: #c6a16a;
+  --accent-foreground: #111318;
+  --destructive: #ff5555;
+  --destructive-foreground: #111318;
+  --border: #2a2f3a;
+  --input: #1f2129;
+  --ring: #c6a16a;
+  --chart-1: #c6a16a;
+  --chart-2: #ffffff;
+  --chart-3: #2a2f3a;
+  --chart-4: #b0b0b0;
+  --chart-5: #555555;
+  --sidebar: #15171b;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #ffffff;
+  --sidebar-primary-foreground: #111318;
+  --sidebar-accent: #c6a16a;
+  --sidebar-accent-foreground: #111318;
+  --sidebar-border: #2a2f3a;
+  --sidebar-ring: #c6a16a;
+}
+
+@theme inline {
+  --font-sans: "Alkatra", "Alkatra Fallback";
+  --font-serif: "Dancing Script", "Dancing Script  ";
+  --font-mono: "Geist Mono", "Geist Mono Fallback";
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Added comprehensive animation keyframes and utility classes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(198, 161, 106, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(198, 161, 106, 0.8);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.fade-in-down {
+  animation: fadeInDown 0.6s ease-out;
+}
+
+.fade-in {
+  animation: fadeIn 0.8s ease-out;
+}
+
+.slide-in-left {
+  animation: slideInLeft 0.6s ease-out;
+}
+
+.slide-in-right {
+  animation: slideInRight 0.6s ease-out;
+}
+
+.scale-in {
+  animation: scaleIn 0.5s ease-out;
+}
+
+.animate-glow {
+  animation: glow 3s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Smooth transitions for interactive elements */
+button,
+a {
+  @apply transition-all duration-300 ease-out;
+}
+
+.interactive-lift {
+  @apply hover:-translate-y-1 hover:shadow-lg transition-all duration-300;
+}
+
+.interactive-scale {
+  @apply hover:scale-105 transition-transform duration-300;
+}
