@@ -998,18 +998,55 @@ const galleryCategories = [
     "Washroom",
     "Balcony"
 ];
+const galleryItems = [
+    {
+        id: 1,
+        category: "Living Room",
+        image: "/modern-living-room.png"
+    },
+    {
+        id: 2,
+        category: "Living Room",
+        image: "/luxury-sofa-living-area-design.jpg"
+    },
+    {
+        id: 3,
+        category: "Living Room",
+        image: "/contemporary-living-space.png"
+    },
+    {
+        id: 4,
+        category: "Kitchen",
+        image: "/modern-kitchen-design-interior.jpg"
+    },
+    {
+        id: 5,
+        category: "Kitchen",
+        image: "/canyon-village-storage/image3.png"
+    },
+    {
+        id: 6,
+        category: "Kitchen",
+        image: "/contemporary-kitchen.png"
+    },
+    {
+        id: 7,
+        category: "Bedroom",
+        image: "/luxury-bedroom.png"
+    },
+    {
+        id: 8,
+        category: "Bedroom",
+        image: "/modern-master-bedroom.jpg"
+    },
+    {
+        id: 9,
+        category: "Bedroom",
+        image: "/contemporary-bedroom.png"
+    }
+];
 function Gallery() {
     const [activeTab, setActiveTab] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])("Living Room");
-    const [galleryItems, setGalleryItems] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])([]);
-    // Load images from database
-    const fetchGallery = async ()=>{
-        const res = await fetch("/api/gallery/list");
-        const data = await res.json();
-        setGalleryItems(data);
-    };
-    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
-        fetchGallery();
-    }, []);
     const filteredItems = galleryItems.filter((item)=>item.category === activeTab);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
         id: "gallery",
@@ -1025,20 +1062,20 @@ function Gallery() {
                             children: "Gallery"
                         }, void 0, false, {
                             fileName: "[project]/components/sections/gallery.tsx",
-                            lineNumber: 36,
+                            lineNumber: 29,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "w-12 h-1 bg-accent mx-auto"
                         }, void 0, false, {
                             fileName: "[project]/components/sections/gallery.tsx",
-                            lineNumber: 37,
+                            lineNumber: 30,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/sections/gallery.tsx",
-                    lineNumber: 35,
+                    lineNumber: 28,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1052,18 +1089,18 @@ function Gallery() {
                                     className: "absolute bottom-0 left-0 w-full h-0.5 bg-accent"
                                 }, void 0, false, {
                                     fileName: "[project]/components/sections/gallery.tsx",
-                                    lineNumber: 51,
+                                    lineNumber: 44,
                                     columnNumber: 42
                                 }, this)
                             ]
                         }, category, true, {
                             fileName: "[project]/components/sections/gallery.tsx",
-                            lineNumber: 43,
+                            lineNumber: 36,
                             columnNumber: 13
                         }, this))
                 }, void 0, false, {
                     fileName: "[project]/components/sections/gallery.tsx",
-                    lineNumber: 41,
+                    lineNumber: 34,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1072,12 +1109,12 @@ function Gallery() {
                             className: "group relative h-72 rounded-lg overflow-hidden shadow-md cursor-pointer",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
-                                    src: item.image_path,
+                                    src: item.image || "/placeholder.svg",
                                     alt: `${item.category} design`,
                                     className: "w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                                 }, void 0, false, {
                                     fileName: "[project]/components/sections/gallery.tsx",
-                                    lineNumber: 60,
+                                    lineNumber: 53,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1087,42 +1124,34 @@ function Gallery() {
                                         children: "View"
                                     }, void 0, false, {
                                         fileName: "[project]/components/sections/gallery.tsx",
-                                        lineNumber: 68,
+                                        lineNumber: 60,
                                         columnNumber: 17
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/components/sections/gallery.tsx",
-                                    lineNumber: 67,
+                                    lineNumber: 59,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, item.id, true, {
                             fileName: "[project]/components/sections/gallery.tsx",
-                            lineNumber: 59,
+                            lineNumber: 52,
                             columnNumber: 13
                         }, this))
                 }, void 0, false, {
                     fileName: "[project]/components/sections/gallery.tsx",
-                    lineNumber: 57,
+                    lineNumber: 50,
                     columnNumber: 9
-                }, this),
-                filteredItems.length === 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                    className: "text-center text-gray-600 mt-10",
-                    children: "No images uploaded yet in this category."
-                }, void 0, false, {
-                    fileName: "[project]/components/sections/gallery.tsx",
-                    lineNumber: 78,
-                    columnNumber: 11
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/components/sections/gallery.tsx",
-            lineNumber: 33,
+            lineNumber: 26,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/components/sections/gallery.tsx",
-        lineNumber: 32,
+        lineNumber: 25,
         columnNumber: 5
     }, this);
 }
