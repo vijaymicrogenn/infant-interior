@@ -72,7 +72,7 @@ var __TURBOPACK__imported__module__$5b$next$5d2f$internal$2f$font$2f$google$2f$d
 ;
 ;
 const metadata = {
-    title: "Urban Interiors - Premium Interior Design Solutions",
+    title: "Infant Interiors - Premium Interior Design Solutions",
     description: "Transform your spaces with Urban Interiors. Modern, luxury interior design for homes and commercial spaces.",
     generator: "v0.app",
     icons: {

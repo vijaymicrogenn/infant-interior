@@ -2474,6 +2474,16 @@
     }
   }
 
+  .bg-black\/95 {
+    background-color: #000000f2;
+  }
+
+  @supports (color: color-mix(in lab, red, red)) {
+    .bg-black\/95 {
+      background-color: color-mix(in oklab, var(--color-black) 95%, transparent);
+    }
+  }
+
   .bg-border {
     background-color: var(--border);
   }
@@ -2652,6 +2662,11 @@
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
   }
 
+  .from-black {
+    --tw-gradient-from: var(--color-black);
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+
   .from-black\/80 {
     --tw-gradient-from: #000c;
   }
@@ -2731,6 +2746,11 @@
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
   }
 
+  .to-gray-900 {
+    --tw-gradient-to: var(--color-gray-900);
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+
   .to-indigo-100 {
     --tw-gradient-to: var(--color-indigo-100);
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
@@ -2799,6 +2819,10 @@
 
   .fill-yellow-400 {
     fill: var(--color-yellow-400);
+  }
+
+  .object-contain {
+    object-fit: contain;
   }
 
   .object-cover {
@@ -4066,6 +4090,15 @@
   }
 
   @media (hover: hover) {
+    .hover\:scale-110:hover {
+      --tw-scale-x: 110%;
+      --tw-scale-y: 110%;
+      --tw-scale-z: 110%;
+      scale: var(--tw-scale-x) var(--tw-scale-y);
+    }
+  }
+
+  @media (hover: hover) {
     .hover\:-rotate-12:hover {
       rotate: -12deg;
     }
@@ -4092,6 +4125,18 @@
   @media (hover: hover) {
     .hover\:bg-accent:hover {
       background-color: var(--accent);
+    }
+  }
+
+  @media (hover: hover) {
+    .hover\:bg-black\/80:hover {
+      background-color: #000c;
+    }
+
+    @supports (color: color-mix(in lab, red, red)) {
+      .hover\:bg-black\/80:hover {
+        background-color: color-mix(in oklab, var(--color-black) 80%, transparent);
+      }
     }
   }
 

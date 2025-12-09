@@ -16,7 +16,7 @@ const dancingScript = Dancing_Script({
 })
 
 export const metadata: Metadata = {
-  title: "Urban Interiors - Premium Interior Design Solutions",
+  title: "Infant Interiors - Premium Interior Design Solutions",
   description:
     "Transform your spaces with Urban Interiors. Modern, luxury interior design for homes and commercial spaces.",
   generator: "v0.app",

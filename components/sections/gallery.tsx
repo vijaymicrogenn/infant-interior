@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 
-const galleryCategories = ["Living Room", "Kitchen", "Dining Room", "Bedroom", "Washroom", "Balcony"]
+const galleryCategories = ["Living Room", "Kitchen", "Dining Room", "Bedroom", "Washroom", "Balcony", "Factory"]
 
 const galleryItems = [
   { id: 1, category: "Living Room", image: "/modern-living-room.png" },

@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useRef, useEffect } from "react"
 import { X, Play } from "lucide-react"
 
 const works = [
@@ -9,26 +9,52 @@ const works = [
     title: "Kitchen",
     duration: "2 months",
     image: "/luxury-kitchen-interior-design-transformation.jpg",
-    video: "https://commondatastorage.googleapis.com/gtv-videos-library/sample/sintel.mp4",
+    video: "/vid1.mp4",
   },
   {
     id: 2,
     title: "Living Room",
     duration: "3 months",
     image: "/luxury-living-room-design-transformation.jpg",
-    video: "https://commondatastorage.googleapis.com/gtv-videos-library/sample/sintel.mp4",
+    video: "/vid2.mp4",
   },
   {
     id: 3,
     title: "Bedroom Suite",
     duration: "2.5 months",
     image: "/luxury-master-bedroom-design-transformation.jpg",
-    video: "https://commondatastorage.googleapis.com/gtv-videos-library/sample/sintel.mp4",
+    video: "/vid3.mp4",
   },
 ]
 
 export default function OurWorks() {
   const [selectedVideo, setSelectedVideo] = useState<(typeof works)[0] | null>(null)
+  const videoRef = useRef<HTMLVideoElement>(null)
+
+  // Close modal with Escape key
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setSelectedVideo(null)
+    }
+    
+    if (selectedVideo) {
+      document.body.style.overflow = "hidden"
+      document.addEventListener("keydown", handleEscape)
+    }
+    
+    return () => {
+      document.body.style.overflow = "unset"
+      document.removeEventListener("keydown", handleEscape)
+    }
+  }, [selectedVideo])
+
+  // Reset video when modal closes
+  useEffect(() => {
+    if (!selectedVideo && videoRef.current) {
+      videoRef.current.pause()
+      videoRef.current.currentTime = 0
+    }
+  }, [selectedVideo])
 
   return (
     <section id="works" className="py-20 md:py-32 px-4 bg-card">
@@ -74,18 +100,39 @@ export default function OurWorks() {
 
       {/* Video Modal */}
       {selectedVideo && (
-        <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4">
-          <div className="relative w-full max-w-4xl bg-black rounded-lg overflow-hidden">
+        <div 
+          className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4"
+          onClick={() => setSelectedVideo(null)}
+        >
+          <div 
+            className="relative w-full max-w-6xl bg-black rounded-lg overflow-hidden shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Close Button */}
             <button
               onClick={() => setSelectedVideo(null)}
-              className="absolute top-4 right-4 z-10 p-2 bg-accent rounded-full hover:opacity-80 transition-opacity"
+              className="absolute top-4 right-4 z-10 p-2 bg-black/50 hover:bg-black/80 backdrop-blur-sm rounded-full hover:scale-110 transition-all duration-200"
             >
-              <X className="w-6 h-6" />
+              <X className="w-6 h-6 text-white" />
             </button>
-            <video src={selectedVideo.video} controls autoPlay className="w-full h-auto" />
-            <div className="p-4 text-white">
-              <h3 className="font-serif text-2xl mb-1">{selectedVideo.title}</h3>
-              <p className="text-gray-300">{selectedVideo.duration}</p>
+            
+            {/* Video Container */}
+            <div className="relative w-full h-auto aspect-video bg-black">
+              <video
+                ref={videoRef}
+                src={selectedVideo.video}
+                controls
+                autoPlay
+                className="w-full h-full object-contain"
+                controlsList="nodownload"
+                playsInline
+              />
+            </div>
+            
+            {/* Video Info */}
+            <div className="p-6 text-white bg-gradient-to-t from-black to-gray-900">
+              <h3 className="font-serif text-3xl mb-2">{selectedVideo.title}</h3>
+              <p className="text-gray-300 text-lg">Duration: {selectedVideo.duration}</p>
             </div>
           </div>
         </div>
